@@ -1,0 +1,11 @@
+header {
+    background-color: green;
+    height: 60px;
+}
+.Side {
+    display: flex;
+    padding-top: 10px;
+}
+.list {
+    float: right;
+}

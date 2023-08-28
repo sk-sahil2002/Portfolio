@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="feeback.css">
+    <title>Sahil Shaikh Profolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <header1>
+        <nav class="navigation">
+            <img class="logo" src="Sahil logo.png" href="sksahil.me">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <ul class="icons">
+                <li><a href="https://sksahil.me/" class="list-group-item"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#container" class="list-group-item"><i class="fa fa-user"></i>  Profile</a></li>
+                <li><a href="#edu" class="list-group-item"><i class="fa fa-pencil"></i>  Education</a></li>
+                <li><a href="#contact" class="list-group-item"><i class="fa fa-address-book"></i>  Contact Us</a></li>
+                <li><a href="feedback.html" class="active"><i class="fa fa-envelope"></i>  Feedback</a></li>
+                <li><a href="https://www.linkedin.com/in/sahil-shaikh-5b672a144/" class="list-group-item"><i class="fa fa-linkedin"></i>  Linkedin</a></li>
+            </ul>
+        </nav>
+    </header1>
+        <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false">
+            <h2>Input Your Valueable Feedback Here.</h2>
+            <label><i class="fa fa-user-circle"></i> Username*</label>
+            <input type="text" id="name"  placeholder="Smith" required>
+            <label><i class="fa fa-mail-reply"></i> E-mail*</label>
+            <input type="mail" id="mail" placeholder="Smith@sample.com" required>
+            <label><i class="fa fa-phone"></i> phone</label>
+            <input type="tel" id="phone" placeholder="1234567890">
+            <label><i class="fa fa-envelope"></i> Message*</label>
+            <input type="text-area" id="message" rows="4" placeholder="Enter Your Valuebale Feedback Here." required>
+            <i class="fa fa-check"> By clicking Send Button you agreed to Share details with ADMIN</i>
+            <i class="fa fa-heart"> Thanks For Your Valueable Feedback </i>
+            <button type="submit">Send</button>
+            <li><a href="https://sksahil.me" ><i class="fa fa-home"></i>  Back To Home Page</a></li>
+        </form>
+        </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function sendEmail(){
+                Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "Sahilmomin474@gmail.com",
+    Password : "D419856A55EB5157A41CF6578E8B053F5A84",
+    To : 'sahilmomin474@gmail.com',
+    From : document.getElementById("mail").value,
+    Subject : "New Feedback",
+    Body : "Name: "+ document.getElementById("name").value
+    +"<br> Email: " + document.getElementById("phone").value
+    +"<br> Message: " + document.getElementById("message").value
+
+}).then(
+  message => alert("Message Sent Sucessfully. Thanks")
+);
+    }
+        </script>
+</body>
+</html>
