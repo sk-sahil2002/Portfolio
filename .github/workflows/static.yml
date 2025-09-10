@@ -2,7 +2,7 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: ["main"]  # change to "master" only if your branch is really named master
+    branches: ["main"]   # or "master" if that's your default branch
   workflow_dispatch:
 
 permissions:
@@ -28,9 +28,9 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3   # ✅ latest version for Pages
         with:
-          path: '.'  # Upload your static site files
+          path: '.'  # your static site root
 
       - name: Deploy to GitHub Pages
         id: deployment
