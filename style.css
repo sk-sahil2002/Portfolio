@@ -38,6 +38,11 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* ===== Custom Scrollbar ===== */
@@ -251,6 +256,7 @@ nav a {
     "contact exp exp exp"
     "achievements achievements achievements achievements"
     "footer footer footer footer";
+  box-sizing: border-box;
 }
 
 .achievements {
@@ -267,6 +273,8 @@ nav a {
   transition: var(--transition-base);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .card::before {
@@ -601,6 +609,7 @@ footer p {
     flex-direction: column;
     padding: 2rem 1rem;
     gap: 0.5rem;
+    box-sizing: border-box;
   }
   
   nav ul li {
@@ -626,10 +635,13 @@ footer p {
   .container {
     padding: 2rem 1rem;
     gap: 1rem;
+    box-sizing: border-box;
   }
   
   .card {
     padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
