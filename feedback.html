@@ -5,70 +5,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="feeback.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="feedback.css">
     <link rel="icon" type="image/x-icon" href="Sahil logo.png">
-    <title>Sahil Shaikh Profolio</title>
+    <title>Sahil Shaikh - Feedback</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 <body>
-    <header1>
+    <header>
         <nav class="navigation">
-            <img class="logo" src="Sahil logo.png" href="index.html">
+            <a href="index.html" class="logo-link">
+                <img class="logo" src="Sahil%20logo.png" alt="Sahil Shaikh Logo">
+            </a>
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
-                <i class="fa fa-bars"></i>
+                <i class="fas fa-bars"></i>
             </label>
             <ul class="icons">
-                <li><a href="index.html" class="list-group-item"><i class="fa fa-home"></i> Home</a></li>
-                <li><a href="#container" class="list-group-item"><i class="fa fa-user"></i>  Profile</a></li>
-                <li><a href="#edu" class="list-group-item"><i class="fa fa-pencil"></i>  Education</a></li>
-                <li><a href="#contact" class="list-group-item"><i class="fa fa-address-book"></i>  Contact Us</a></li>
-                <li><a href="feedback.html" class="active"><i class="fa fa-envelope"></i>  Feedback</a></li>
-                <li><a href="https://www.linkedin.com/in/sahil-shaikh-5b672a144/" class="list-group-item"><i class="fa fa-linkedin"></i>  Linkedin</a></li>
+                <li><a href="index.html" class="list-group-item"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="index.html#container" class="list-group-item"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="index.html#edu" class="list-group-item"><i class="fas fa-pencil-alt"></i> Education</a></li>
+                <li><a href="index.html#contact" class="list-group-item"><i class="fas fa-address-book"></i> Contact</a></li>
+                <li><a href="feedback.html" class="active"><i class="fas fa-envelope"></i> Feedback</a></li>
+                <li><a href="https://www.linkedin.com/in/sahil-shaikh-5b672a144/" class="list-group-item"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
             </ul>
         </nav>
-    </header1>
-        <div class="container">
-        <form onsubmit="sendEmail(); reset(); return false">
-            <h2>Input Your Valueable Feedback Here.</h2>
-            <label><i class="fa fa-user-circle"></i> Username*</label>
-            <input type="text" id="name"  placeholder="Smith" required>
-            <label><i class="fa fa-mail-reply"></i> E-mail*</label>
-            <input type="mail" id="mail" placeholder="Smith@sample.com" required>
-            <label><i class="fa fa-phone"></i> phone</label>
-            <input type="tel" id="phone" placeholder="1234567890">
-            <label><i class="fa fa-envelope"></i> Message*</label>
-            <input type="text-area" id="message" rows="4" placeholder="Enter Your Valuebale Feedback Here." required>
-            <i class="fa fa-check"> By clicking Send Button you agreed to Share details with ADMIN</i>
-            <i class="fa fa-heart"> Thanks For Your Valueable Feedback </i>
-            <button type="submit">Send</button>
-            <li><a href="index.html" ><i class="fa fa-home"></i>  Back To Home Page</a></li>
-        </form>
+    </header>
+    
+    <main class="feedback-page">
+        <div class="feedback-card">
+            <h2>Share Your Feedback</h2>
+            <p class="subtitle">I'd love to hear from you! Your feedback helps me improve.</p>
+            
+            <form action="https://formspree.io/f/xrewzzdj" method="POST">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Username*</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mail"><i class="fas fa-envelope"></i> E-mail*</label>
+                    <input type="email" id="mail" name="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone"><i class="fas fa-phone"></i> Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="1234567890">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message"><i class="fas fa-comment"></i> Message*</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Enter your valuable feedback here..." required></textarea>
+                </div>
+                
+                <div class="form-note">
+                    <i class="fas fa-check-circle"></i>
+                    <span>By clicking Send, you agree to share your details with the admin</span>
+                </div>
+                
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> Send Feedback
+                </button>
+                
+                <a href="index.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </form>
         </div>
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-        <script>
-            function sendEmail(){
-                Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "Sahilmomin474@gmail.com",
-    Password : "D419856A55EB5157A41CF6578E8B053F5A84",
-    To : 'sahilmomin474@gmail.com',
-    From : document.getElementById("mail").value,
-    Subject : "New Feedback",
-    Body : "Name: "+ document.getElementById("name").value
-    +"<br> Email: " + document.getElementById("phone").value
-    +"<br> Message: " + document.getElementById("message").value
-
-}).then(
-  message => alert("Currently this Feature is Not Working. Thanks")
-);
-    }
-        </script>
+    </main>
 </body>
 </html>
