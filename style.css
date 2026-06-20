@@ -82,6 +82,174 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
+}
+
+.global-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.global-icon {
+  position: absolute;
+  color: var(--primary-color);
+  opacity: 0.06;
+  animation: drift linear infinite;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(calc(var(--drift-x) * 0.5), calc(var(--drift-y) * 0.8)) rotate(calc(var(--drift-rotation) * 0.5));
+  }
+  50% {
+    transform: translate(var(--drift-x), var(--drift-y)) rotate(var(--drift-rotation));
+  }
+  75% {
+    transform: translate(calc(var(--drift-x) * 1.2), calc(var(--drift-y) * 0.3)) rotate(calc(var(--drift-rotation) * -0.3));
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.g-icon-1 {
+  top: 10%;
+  left: 5%;
+  font-size: 5rem;
+  --drift-x: 120px;
+  --drift-y: -80px;
+  --drift-rotation: 25deg;
+  animation-duration: 12s;
+}
+
+.g-icon-2 {
+  top: 25%;
+  right: 8%;
+  font-size: 4rem;
+  --drift-x: -100px;
+  --drift-y: 120px;
+  --drift-rotation: -30deg;
+  animation-duration: 15s;
+  animation-delay: -5s;
+}
+
+.g-icon-3 {
+  top: 45%;
+  left: 12%;
+  font-size: 4.5rem;
+  --drift-x: 150px;
+  --drift-y: 60px;
+  --drift-rotation: 35deg;
+  animation-duration: 10s;
+  animation-delay: -10s;
+}
+
+.g-icon-4 {
+  top: 60%;
+  right: 15%;
+  font-size: 3.5rem;
+  --drift-x: -130px;
+  --drift-y: -90px;
+  --drift-rotation: -20deg;
+  animation-duration: 14s;
+  animation-delay: -3s;
+}
+
+.g-icon-5 {
+  top: 80%;
+  left: 20%;
+  font-size: 4rem;
+  --drift-x: 110px;
+  --drift-y: -100px;
+  --drift-rotation: 40deg;
+  animation-duration: 18s;
+  animation-delay: -15s;
+}
+
+.g-icon-6 {
+  top: 15%;
+  right: 25%;
+  font-size: 3.8rem;
+  --drift-x: -90px;
+  --drift-y: 150px;
+  --drift-rotation: -28deg;
+  animation-duration: 11s;
+  animation-delay: -8s;
+}
+
+.g-icon-7 {
+  top: 35%;
+  left: 80%;
+  font-size: 4.2rem;
+  --drift-x: 140px;
+  --drift-y: 80px;
+  --drift-rotation: 22deg;
+  animation-duration: 13s;
+  animation-delay: -12s;
+}
+
+.g-icon-8 {
+  top: 70%;
+  right: 5%;
+  font-size: 3.2rem;
+  --drift-x: -120px;
+  --drift-y: -70px;
+  --drift-rotation: -32deg;
+  animation-duration: 16s;
+  animation-delay: -7s;
+}
+
+.g-icon-9 {
+  top: 50%;
+  left: 2%;
+  font-size: 4.8rem;
+  --drift-x: 160px;
+  --drift-y: -130px;
+  --drift-rotation: 45deg;
+  animation-duration: 17s;
+  animation-delay: -18s;
+}
+
+.g-icon-10 {
+  top: 85%;
+  right: 30%;
+  font-size: 3.5rem;
+  --drift-x: -150px;
+  --drift-y: 100px;
+  --drift-rotation: -38deg;
+  animation-duration: 10s;
+  animation-delay: -6s;
+}
+
+.g-icon-11 {
+  top: 5%;
+  left: 40%;
+  font-size: 4.5rem;
+  --drift-x: 130px;
+  --drift-y: 140px;
+  --drift-rotation: 28deg;
+  animation-duration: 14s;
+  animation-delay: -14s;
+}
+
+.g-icon-12 {
+  top: 90%;
+  left: 70%;
+  font-size: 3.8rem;
+  --drift-x: -110px;
+  --drift-y: -120px;
+  --drift-rotation: -42deg;
+  animation-duration: 16s;
+  animation-delay: -10s;
 }
 
 /* ===== Navigation ===== */
@@ -99,6 +267,13 @@ nav.navigation {
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-md);
   padding: 0 2rem;
+}
+
+.container,
+.hero,
+footer {
+  position: relative;
+  z-index: 10;
 }
 
 .logo {
@@ -176,6 +351,53 @@ nav a {
   overflow: hidden;
 }
 
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bg-icon {
+  position: absolute;
+  color: var(--primary-color);
+  opacity: 0.08;
+  animation: float 10s ease-in-out infinite;
+}
+
+.bg-icon-1 {
+  top: 15%;
+  left: 8%;
+  font-size: 8rem;
+  animation-delay: 0s;
+}
+
+.bg-icon-2 {
+  top: 60%;
+  right: 10%;
+  font-size: 6rem;
+  animation-delay: 2s;
+  animation-direction: reverse;
+}
+
+.bg-icon-3 {
+  bottom: 20%;
+  left: 15%;
+  font-size: 7rem;
+  animation-delay: 4s;
+}
+
+.bg-icon-4 {
+  top: 30%;
+  right: 20%;
+  font-size: 5rem;
+  animation-delay: 6s;
+  animation-direction: reverse;
+}
+
 .hero::before {
   content: '';
   position: absolute;
@@ -205,8 +427,9 @@ nav a {
 
 .hero-content {
   text-align: center;
-  z-index: 1;
+  z-index: 10;
   padding: 0 1.5rem;
+  position: relative;
 }
 
 .hero-content h1 {
@@ -257,6 +480,7 @@ nav a {
     "achievements achievements achievements achievements"
     "footer footer footer footer";
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .achievements {
@@ -274,7 +498,11 @@ nav a {
   position: relative;
   overflow: hidden;
   width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .card::before {
@@ -661,5 +889,37 @@ footer p {
   
   .exp-header {
     flex-direction: column;
+  }
+  
+  .bg-icon-1 {
+    font-size: 5rem;
+  }
+  
+  .bg-icon-2 {
+    font-size: 3.5rem;
+  }
+  
+  .bg-icon-3 {
+    font-size: 4rem;
+  }
+  
+  .bg-icon-4 {
+    font-size: 3rem;
+  }
+  
+  .global-icon {
+    opacity: 0.04;
+  }
+  
+  .g-icon-1, .g-icon-9, .g-icon-11 {
+    font-size: 3rem;
+  }
+  
+  .g-icon-2, .g-icon-5, .g-icon-7, .g-icon-10, .g-icon-12 {
+    font-size: 2.5rem;
+  }
+  
+  .g-icon-3, .g-icon-4, .g-icon-6, .g-icon-8 {
+    font-size: 2rem;
   }
 }
